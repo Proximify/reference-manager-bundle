@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\BlogBundle;
+namespace Proximify\ReferenceManagerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
