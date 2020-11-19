@@ -29,15 +29,14 @@ abstract class Reference
     protected $title;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    protected $mod_xml;
-
-    /**
-     * @ORM\Column(type="boolean", length=255)
+     * @ORM\Column(type="boolean")
      */
     protected $starred = 0;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $authoredByMe = 0;
 
     public function getId(): ?int
     {
@@ -80,18 +79,6 @@ abstract class Reference
         return $this;
     }
 
-    public function getMod(): ?string
-    {
-        return $this->mod_xml;
-    }
-
-    public function setMod(string $mod): self
-    {
-        $this->mod_xml = $mod;
-
-        return $this;
-    }
-
     public function getStarred()
     {
         return $this->starred;
@@ -100,5 +87,15 @@ abstract class Reference
     public function setStarred($starred)
     {
         $this->starred = $starred;
+    }
+
+    public function getAuthoredByMe()
+    {
+        return $this->authoredByMe;
+    }
+
+    public function setAuthoredByMe($authoredByMe)
+    {
+        $this->authoredByMe = $authoredByMe;
     }
 }
